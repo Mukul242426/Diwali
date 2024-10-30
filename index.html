@@ -1,62 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Happy Diwali</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <style>
-        .content h2 span {
-            display: inline-block;
-            transition: color 0.5s ease;
-            letter-spacing: 0.5rem;
-        }
+      .content h2 span {
+        display: inline-block;
+        transition: color 0.5s ease;
+        letter-spacing: 0.5rem;
+      }
 
+      .content h2 {
+        width: 100%; /* Default for small screens */
+      }
+
+      @media (min-width: 640px) {
+        /* sm */
         .content h2 {
-            width: 75%;
+          width: 100%; /* Keep 100% */
         }
+      }
+
+      @media (min-width: 1024px) {
+        /* lg */
+        .content h2 {
+          width: 70%;
+        }
+      }
+
+      @media (min-width: 1280px) {
+        /* xl */
+        .content h2 {
+          width: 75%;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <section class="fireworks" id="sec1"></section>
     <section class="content" id="sec2">
-        <h2 id="diwaliText">
-            <span>Wishing</span>
-            <span>you</span>
-            <span>and</span>
-            <span>your</span>
-            <span>family</span>
-            <span>a</span>
-            <span>joyful</span>
-            <span>and</span>
-            <span>prosperous</span>
-            <span>Diwali</span>
-            <span>from</span>
-            <span>the</span>
-            <span>Webknot</span>
-            <span>Family!</span>
-        </h2>
+      <h2 id="diwaliText">
+        <span>Wishing</span>
+        <span>you</span>
+        <span>and</span>
+        <span>your</span>
+        <span>family</span>
+        <span>a</span>
+        <span>joyful</span>
+        <span>and</span>
+        <span>prosperous</span>
+        <span>Diwali</span>
+        <span>from</span>
+        <span>the</span>
+        <span>Webknot</span>
+        <span>Family!</span>
+      </h2>
     </section>
 
     <script type="text/javascript" src="script.js"></script>
     <script>
-        document.querySelector('.fireworks').fireworks({ 
-            sound: false,
-            opacity: 1.2,
-            width: '100%',
-            height: '100%'
+      document.querySelector(".fireworks").fireworks({
+        sound: false,
+        opacity: 1.2,
+        width: "100%",
+        height: "100%",
+      });
+
+      function randomLightColor() {
+        const r = Math.floor(Math.random() * 156) + 100; // 100-255
+        const g = Math.floor(Math.random() * 156) + 100; // 100-255
+        const b = Math.floor(Math.random() * 156) + 100; // 100-255
+        return `rgb(${r}, ${g}, ${b})`;
+      }
+
+      setInterval(() => {
+        document.querySelectorAll("#diwaliText span").forEach((span) => {
+          span.style.color = randomLightColor();
         });
-
-        function randomLightColor() {
-            const r = Math.floor(Math.random() * 156) + 100; // 100-255
-            const g = Math.floor(Math.random() * 156) + 100; // 100-255
-            const b = Math.floor(Math.random() * 156) + 100; // 100-255
-            return `rgb(${r}, ${g}, ${b})`;
-        }
-
-        setInterval(() => {
-            document.querySelectorAll('#diwaliText span').forEach(span => {
-                span.style.color = randomLightColor();
-            });
-        }, 2000);
+      }, 2000);
     </script>
-</body>
+  </body>
 </html>
