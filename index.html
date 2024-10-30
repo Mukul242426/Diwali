@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <title>Happy Diwali</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .content h2 span {
+            display: inline-block;
+            transition: color 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <section class="fireworks" id="sec1"></section>
+    <section class="content" id="sec2">
+        <h2 id="diwaliText">
+            <span>H</span><span>a</span><span>p</span><span>p</span><span>y</span>
+            <span>D</span><span>i</span><span>w</span><span>a</span><span>l</span><span>i</span>
+        </h2>
+    </section>
+
+    <script type="text/javascript" src="script.js"></script>
+    <script>
+        document.querySelector('.fireworks').fireworks({ 
+            sound: false,
+            opacity: 1.2,
+            width: '100%',
+            height: '100%'
+        });
+
+        function randomLightColor() {
+            // Generate a light color by keeping the RGB values high
+            const r = Math.floor(Math.random() * 156) + 100; // 100-255
+            const g = Math.floor(Math.random() * 156) + 100; // 100-255
+            const b = Math.floor(Math.random() * 156) + 100; // 100-255
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        setInterval(() => {
+            document.querySelectorAll('#diwaliText span').forEach(span => {
+                span.style.color = randomLightColor();
+            });
+        }, 2000);
+    </script>
+</body>
+</html>
