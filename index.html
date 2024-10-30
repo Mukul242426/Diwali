@@ -7,6 +7,11 @@
         .content h2 span {
             display: inline-block;
             transition: color 0.5s ease;
+            letter-spacing: 0.5rem;
+        }
+
+        .content h2 {
+            width: 75%;
         }
     </style>
 </head>
@@ -14,8 +19,20 @@
     <section class="fireworks" id="sec1"></section>
     <section class="content" id="sec2">
         <h2 id="diwaliText">
-            <span>H</span><span>a</span><span>p</span><span>p</span><span>y</span>
-            <span>D</span><span>i</span><span>w</span><span>a</span><span>l</span><span>i</span>
+            <span>Wishing</span>
+            <span>you</span>
+            <span>and</span>
+            <span>your</span>
+            <span>family</span>
+            <span>a</span>
+            <span>joyful</span>
+            <span>and</span>
+            <span>prosperous</span>
+            <span>Diwali</span>
+            <span>from</span>
+            <span>the</span>
+            <span>Webknot</span>
+            <span>Family!</span>
         </h2>
     </section>
 
@@ -29,7 +46,6 @@
         });
 
         function randomLightColor() {
-            // Generate a light color by keeping the RGB values high
             const r = Math.floor(Math.random() * 156) + 100; // 100-255
             const g = Math.floor(Math.random() * 156) + 100; // 100-255
             const b = Math.floor(Math.random() * 156) + 100; // 100-255
